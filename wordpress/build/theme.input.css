@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-pistachio/20 text-ink;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .screen-reader-text {
+    @apply sr-only;
+  }
+
+  .skip-link:focus {
+    @apply not-sr-only fixed right-4 top-4 z-[100] rounded-full bg-ink px-4 py-2 text-sm text-cream;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1220px] px-4 sm:px-6 lg:px-10;
+  }
+
+  .section {
+    @apply py-9 sm:py-12;
+  }
+
+  .section-title {
+    @apply text-[22px] font-extrabold tracking-tight text-ink sm:text-[27px];
+  }
+
+  .pill-link {
+    @apply inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-medium transition;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-3 rounded-full bg-ink py-2 pe-2 ps-6 text-sm font-semibold text-cream shadow-pill transition hover:bg-pistachio-deep;
+  }
+
+  .nav-link {
+    @apply block rounded-full px-3.5 py-2 text-[13px] font-medium text-ink/70 transition hover:bg-pistachio-soft/60 hover:text-pistachio-deep;
+  }
+
+  .site-nav > ul {
+    @apply flex items-center gap-1;
+  }
+
+  .site-nav .current-menu-item > a,
+  .site-nav .current_page_item > a {
+    @apply bg-pistachio-soft font-semibold text-pistachio-deep;
+  }
+
+  .entry-content > * + * {
+    @apply mt-4;
+  }
+
+  .entry-content h2 {
+    @apply mt-8 text-xl font-extrabold text-ink;
+  }
+
+  .entry-content h3 {
+    @apply mt-6 text-lg font-bold text-ink;
+  }
+
+  .entry-content a {
+    @apply text-pistachio-deep underline;
+  }
+
+  .entry-content img {
+    @apply rounded-[20px];
+  }
+}
